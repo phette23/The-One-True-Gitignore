@@ -19,6 +19,7 @@ $RECYCLE.BIN/
 .DS_Store
 .DS_Store?
 Icon?
+.localized
 
 # Thumbnails
 ._*
