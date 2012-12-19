@@ -14,3 +14,9 @@ git branch -D temp
 ```
 
 where $REFSPEC is either a commit's hash or a tag.
+
+## Add Deleted Files
+
+```bash
+git add -u
+```
