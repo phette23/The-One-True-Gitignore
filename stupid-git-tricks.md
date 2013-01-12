@@ -20,3 +20,13 @@ where $REFSPEC is either a commit's hash or a tag.
 ```bash
 git add -u
 ```
+
+## Discard Changes in Working Directory
+
+Git already tells you this in the ```git status``` message but just in case:
+
+```bash
+git checkout -- <file>...
+```
+
+This essentially means "checkout copies of the listed files from the current branch" which necessarily means any changes made since the last commit will be reverted.
