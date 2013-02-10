@@ -23,10 +23,20 @@ git add -u
 
 ## Discard Changes in Working Directory
 
-Git already tells you this in the ```git status``` message but just in case:
+Git already tells you this in the `git status` message but just in case:
 
 ```bash
 git checkout -- <file>...
 ```
 
 This essentially means "checkout copies of the listed files from the current branch" which necessarily means any changes made since the last commit will be reverted.
+
+## Revert to Previous Commit
+
+Lose all local changes, go back to $REFSPEC (commit's hash):
+
+```bash
+git reset --hard $REFSPEC
+```
+
+Other ways to revert with more explanation at http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
