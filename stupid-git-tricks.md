@@ -40,3 +40,11 @@ git reset --hard $REFSPEC
 ```
 
 Other ways to revert with more explanation at http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
+
+## Merge Changes from Specific Files on Another Branch
+
+```bash
+git checkout $BRANCH filename1.txt filename2.txt
+```
+
+This checks out not the `$BRANCH` itself, but just those specific files so you can easily import the changes into another branch. Easy way to keep things synchronized across branches that are divergent elsewhere.
