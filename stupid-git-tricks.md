@@ -48,3 +48,14 @@ git checkout $BRANCH filename1.txt filename2.txt
 ```
 
 This checks out not the `$BRANCH` itself, but just those specific files so you can easily import the changes into another branch. Easy way to keep things synchronized across branches that are divergent elsewhere.
+
+## Creating a Github Page
+
+See https://help.github.com/articles/creating-project-pages-manually
+
+```bash
+# checkout an orphan branch named gh-pages, then clear the working directory
+git checkout --orphan gh-pages && g rm -rf .
+# first commit goes here...
+git push origin gh-pages
+```
