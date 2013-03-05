@@ -59,3 +59,11 @@ git checkout --orphan gh-pages && g rm -rf .
 # first commit goes here...
 git push origin gh-pages
 ```
+
+## Change Last Commit Message
+
+```bash
+git commit --amend -m "new message"
+```
+
+Only do _before pushing_ to remote repo.
