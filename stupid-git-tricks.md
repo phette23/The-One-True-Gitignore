@@ -67,3 +67,13 @@ git commit --amend -m "new message"
 ```
 
 Only do _before pushing_ to remote repo.
+
+## Put an Exclamation Point in a Commit Message
+
+`!` is a special character in the Bash shell so it'll get interpreted if you write it inside double quotes.
+
+```bash
+git commit -m 'use single quotes!'
+# or
+git commit -m "mix your quotes"'!'
+```
