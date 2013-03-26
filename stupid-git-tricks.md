@@ -2,6 +2,8 @@
 
 You know those git commands you keep needing to lookup? Yeah, that's this.
 
+The [Git Cheat Sheet](http://byte.kde.org/~zrusin/git/git-cheat-sheet-medium.png) is another good place to look.
+
 ## Truncate Git History
 
 Truncate all history prior to a commit. Taken from: http://bogdan.org.ua/2011/03/28/how-to-truncate-git-history-sample-script-included.html
