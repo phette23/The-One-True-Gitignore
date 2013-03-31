@@ -59,3 +59,7 @@ Icon?
 *.un~
 Session.vim
 .netrwhist
+
+# NPM #
+#######
+node_modules
