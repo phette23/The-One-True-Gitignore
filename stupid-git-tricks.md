@@ -79,3 +79,13 @@ git commit -m 'use single quotes!'
 # or
 git commit -m "mix your quotes"'!'
 ```
+
+## Only Fast-Forward Merge
+
+A fast-forward merge means, essentially, there are no conflicts. The branch being merged in has all the changes from the other branch, it just has a few additional commits on top. You can safely `git merge` only a fast-forward merge with:
+
+```bash
+git merge --ff-only $BRANCH
+```
+
+where `$BRANCH` is the branch you're merging into the branch you're currently on.
