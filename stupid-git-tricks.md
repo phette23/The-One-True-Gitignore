@@ -43,14 +43,6 @@ git reset --hard $REFSPEC
 
 Other ways to revert with more explanation at http://stackoverflow.com/questions/4114095/git-revert-to-previous-commit-how
 
-## Merge Changes from Specific Files on Another Branch
-
-```bash
-git checkout $BRANCH filename1.txt filename2.txt
-```
-
-This checks out not the `$BRANCH` itself, but just those specific files so you can easily import the changes into another branch. Easy way to keep things synchronized across branches that are divergent elsewhere.
-
 ## Creating a Github Page
 
 See https://help.github.com/articles/creating-project-pages-manually
@@ -80,7 +72,17 @@ git commit -m 'use single quotes!'
 git commit -m "mix your quotes"'!'
 ```
 
-## Only Fast-Forward Merge
+## Merging
+
+### Merge Changes from Specific Files on Another Branch
+
+```bash
+git checkout $BRANCH filename1.txt filename2.txt
+```
+
+This checks out not the `$BRANCH` itself, but just those specific files so you can easily import the changes into another branch. Easy way to keep things synchronized across branches that are divergent elsewhere.
+
+### Only Fast-Forward
 
 A fast-forward merge means, essentially, there are no conflicts. The branch being merged in has all the changes from the other branch, it just has a few additional commits on top. You can safely `git merge` only a fast-forward merge with:
 
@@ -89,3 +91,31 @@ git merge --ff-only $BRANCH
 ```
 
 where `$BRANCH` is the branch you're merging into the branch you're currently on.
+
+### Force a Merge Commit
+
+On the other hand, maybe you want a merge commit no matter what, for historical purposes.
+
+```bash
+git merge --no-ff $BRANCH
+```
+
+## Diffs
+
+By words & not by lines:
+
+```bash
+git diff --word-diff
+```
+
+So instead of a lot of +/- lines which were actually just modified, you see which words were changed on a line.
+
+You can use `git show #REFSPEC` to see the full diff for commit `$REFSPEC`.
+
+## Logs
+
+The `--decorate` flag will annotate each log with which branches & tags were involved.
+
+The `-p` flag adds diffs to each log entry.
+
+For the commits involving a particular file (& its diff, if you use `-p`) just pass the file(s) as a parameter at the end the command.
