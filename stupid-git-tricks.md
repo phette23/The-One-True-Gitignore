@@ -119,3 +119,11 @@ The `--decorate` flag will annotate each log with which branches & tags were inv
 The `-p` flag adds diffs to each log entry.
 
 For the commits involving a particular file (& its diff, if you use `-p`) just pass the file(s) as a parameter at the end the command.
+
+To see logs & trees in a web view, run:
+
+```bash
+git instaweb -d webrick --start && open http://localhost:1234
+```
+
+which will open a browser window for viewing your project. The `-d` flag specifies which HTTP daemon to use, by default it's lighttpd but Mac's can use webrick which comes with Ruby. To stop serving files, run the `instaweb` command but with the `--stop` flag.
