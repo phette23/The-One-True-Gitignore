@@ -23,12 +23,20 @@ where $REFSPEC is either a commit's hash or a tag.
 git add -u
 ```
 
+## Add Specific Lines From a File
+
+```bash
+git add -p $FILE
+```
+
+This will scroll through the file, stopped at each "hunk" of changed lines and allowing you to perform a few actions (including "y" for add). So you can commit unrelated sets of changes that happened at the same time in a single file.
+
 ## Discard Changes in Working Directory
 
 Git already tells you this in the `git status` message but just in case:
 
 ```bash
-git checkout -- <file>...
+git checkout -- $FILE...
 ```
 
 This essentially means "checkout copies of the listed files from the current branch" which necessarily means any changes made since the last commit will be reverted.
@@ -49,7 +57,7 @@ See https://help.github.com/articles/creating-project-pages-manually
 
 ```bash
 # checkout an orphan branch named gh-pages, then clear the working directory
-git checkout --orphan gh-pages && g rm -rf .
+git checkout --orphan gh-pages
 # first commit goes here...
 git push origin gh-pages
 ```
