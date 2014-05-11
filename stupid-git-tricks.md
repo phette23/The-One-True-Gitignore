@@ -108,6 +108,18 @@ On the other hand, maybe you want a merge commit no matter what, for historical 
 git merge --no-ff $BRANCH
 ```
 
+### Rebase
+
+Perhaps the best way to sync a feature branch with changes in master is using `rebase`:
+
+```sh
+git checkout feature
+git rebase master
+# rewinds HEAD, replays changes from master & then new commits on feature
+```
+
+Squashing multiple commits together with an interactive rebase is also a very useful tool.
+
 ## Diffs
 
 By words & not by lines:
