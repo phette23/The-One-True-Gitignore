@@ -8,7 +8,7 @@ The [Git Cheat Sheet](http://byte.kde.org/~zrusin/git/git-cheat-sheet-medium.png
 
 Truncate all history prior to a commit. Taken from: http://bogdan.org.ua/2011/03/28/how-to-truncate-git-history-sample-script-included.html
 
-```bash
+```sh
 git checkout --orphan temp $REFSPEC
 git commit -m "Truncated history"
 git rebase --onto temp $REFSPEC master
@@ -19,13 +19,13 @@ where $REFSPEC is either a commit's hash or a tag.
 
 ## Add Deleted Files
 
-```bash
+```sh
 git add -u
 ```
 
 ## Add Specific Lines From a File
 
-```bash
+```sh
 git add -p $FILE
 ```
 
@@ -35,7 +35,7 @@ This will scroll through the file, stopped at each "hunk" of changed lines and a
 
 Git already tells you this in the `git status` message but just in case:
 
-```bash
+```sh
 git checkout -- $FILE...
 ```
 
@@ -45,7 +45,7 @@ This essentially means "checkout copies of the listed files from the current bra
 
 Lose all local changes, go back to $REFSPEC (commit's hash):
 
-```bash
+```sh
 git reset --hard $REFSPEC
 ```
 
@@ -55,7 +55,7 @@ Other ways to revert with more explanation at http://stackoverflow.com/questions
 
 See https://help.github.com/articles/creating-project-pages-manually
 
-```bash
+```sh
 # checkout an orphan branch named gh-pages, then clear the working directory
 git checkout --orphan gh-pages
 # first commit goes here...
@@ -64,7 +64,7 @@ git push origin gh-pages
 
 ## Change Last Commit Message
 
-```bash
+```sh
 git commit --amend -m "new message"
 ```
 
@@ -74,7 +74,7 @@ Only do _before pushing_ to remote repo.
 
 `!` is a special character in the Bash shell so it'll get interpreted if you write it inside double quotes.
 
-```bash
+```sh
 git commit -m 'use single quotes!'
 # or
 git commit -m "mix your quotes"'!'
@@ -84,7 +84,7 @@ git commit -m "mix your quotes"'!'
 
 ### Merge Changes from Specific Files on Another Branch
 
-```bash
+```sh
 git checkout $BRANCH filename1.txt filename2.txt
 ```
 
@@ -94,7 +94,7 @@ This checks out not the `$BRANCH` itself, but just those specific files so you c
 
 A fast-forward merge means, essentially, there are no conflicts. The branch being merged in has all the changes from the other branch, it just has a few additional commits on top. You can safely `git merge` only a fast-forward merge with:
 
-```bash
+```sh
 git merge --ff-only $BRANCH
 ```
 
@@ -104,7 +104,7 @@ where `$BRANCH` is the branch you're merging into the branch you're currently on
 
 On the other hand, maybe you want a merge commit no matter what, for historical purposes.
 
-```bash
+```sh
 git merge --no-ff $BRANCH
 ```
 
@@ -112,7 +112,7 @@ git merge --no-ff $BRANCH
 
 By words & not by lines:
 
-```bash
+```sh
 git diff --word-diff
 ```
 
@@ -130,7 +130,7 @@ For the commits involving a particular file (& its diff, if you use `-p`) just p
 
 To see logs & trees in a web view, run:
 
-```bash
+```sh
 git instaweb -d webrick --start && open http://localhost:1234
 ```
 
