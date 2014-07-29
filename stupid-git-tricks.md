@@ -2,7 +2,7 @@
 
 You know those git commands you keep needing to lookup? Yeah, that's this.
 
-The [Git Cheat Sheet](http://byte.kde.org/~zrusin/git/git-cheat-sheet-medium.png) is another good place to look.
+The [Git Cheat Sheet](http://byte.kde.org/~zrusin/git/git-cheat-sheet-medium.png) is another good place to look, as is [Git Flight Rules](https://github.com/k88hudson/git-flight-rules).
 
 ## Truncate Git History
 
